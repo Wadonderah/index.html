@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM-Events</title>
+  </head>
+  <body>
+    <p id="myParagraph">This is an example paragraph</p>
+    <button id="changeText">Change Text</button>
+    <script>
+      const button = document.querySelector('#changeText');
+
+      function newText(event) {
+        console.log(event);
+        const p = document.querySelector('#myParagraph');
+        p.innerText = 'The text has been changed';
+      }
+
+      document.addEventListener('keydown', (event) => {
+        console.log(`A key is pressed: ${event.key}`);
+      });
+
+      document.addEventListener('keyup', (event) => {
+        console.log(`A key is released: ${event.key}`);
+      });
+
+      document.addEventListener('mousedown', (event) => {
+        console.log('The mouse is pressed');
+      });
+      document.addEventListener('mouseup', (event) => {
+        console.log('The mouse is released');
+      });
+
+    </script>
+  </body>
+</html>
